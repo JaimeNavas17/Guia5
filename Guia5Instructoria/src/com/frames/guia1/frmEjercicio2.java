@@ -20,6 +20,8 @@ public class frmEjercicio2 extends javax.swing.JFrame {
      */
     public frmEjercicio2() {
         initComponents();
+        setLocationRelativeTo(null);
+        rdRadio.setSelected(true);
     }
 
     /**
@@ -53,14 +55,19 @@ public class frmEjercicio2 extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 0, -1, -1));
 
         jLabel2.setText("Ingrese radio:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         jLabel3.setText("Circunferencia con diametro:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
 
         txtCircunferencia.setEditable(false);
-        getContentPane().add(txtCircunferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 120, -1));
-        getContentPane().add(txtRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 120, -1));
+        txtCircunferencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCircunferenciaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCircunferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 120, -1));
+        getContentPane().add(txtRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 120, -1));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -71,11 +78,11 @@ public class frmEjercicio2 extends javax.swing.JFrame {
         getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
         jLabel4.setText("Ingrese diametro:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-        getContentPane().add(txtDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 120, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        getContentPane().add(txtDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 120, -1));
 
         jLabel5.setText("Circunferencia con radio:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 130, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 160, 20));
 
         txtCircunferenciaRadio.setEditable(false);
         txtCircunferenciaRadio.addActionListener(new java.awt.event.ActionListener() {
@@ -83,10 +90,9 @@ public class frmEjercicio2 extends javax.swing.JFrame {
                 txtCircunferenciaRadioActionPerformed(evt);
             }
         });
-        getContentPane().add(txtCircunferenciaRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 120, -1));
+        getContentPane().add(txtCircunferenciaRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 120, -1));
 
         rdGroup.add(rdRadio);
-        rdRadio.setSelected(true);
         rdRadio.setText("Radio");
         rdRadio.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -114,8 +120,13 @@ public class frmEjercicio2 extends javax.swing.JFrame {
         });
         getContentPane().add(rdDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
 
-        btReset.setText("Reset");
-        getContentPane().add(btReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, -1));
+        btReset.setText("Limpiar");
+        btReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btResetActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +168,8 @@ public class frmEjercicio2 extends javax.swing.JFrame {
     private void rdRadioStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rdRadioStateChanged
         if (rdRadio.isSelected()) {
             txtDiametro.setEnabled(false);
-        
+            txtDiametro.setText("");
+            txtRadio.requestFocus();
        }
         else{
             txtDiametro.setEnabled(true);
@@ -167,11 +179,24 @@ public class frmEjercicio2 extends javax.swing.JFrame {
     private void rdDiametroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rdDiametroStateChanged
         if (rdDiametro.isSelected()) {
             txtRadio.setEnabled(false);
+            txtRadio.setText("");
+            txtDiametro.requestFocus();
         }
         else{
             txtRadio.setEnabled(true);
         }
     }//GEN-LAST:event_rdDiametroStateChanged
+
+    private void btResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btResetActionPerformed
+       txtCircunferencia.setText("");
+       txtCircunferenciaRadio.setText("");
+       txtDiametro.setText("");
+       txtRadio.setText("");
+    }//GEN-LAST:event_btResetActionPerformed
+
+    private void txtCircunferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCircunferenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCircunferenciaActionPerformed
 
     /**
      * @param args the command line arguments
