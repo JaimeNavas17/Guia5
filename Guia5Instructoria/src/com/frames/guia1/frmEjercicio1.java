@@ -7,6 +7,7 @@ package com.frames.guia1;
 
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
+import javax.swing.JFrame;
 
 /**
  *
@@ -41,6 +42,7 @@ public class frmEjercicio1 extends javax.swing.JFrame {
         txtDiagonal = new javax.swing.JTextField();
         txtArea = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addKeyListener(new java.awt.event.KeyAdapter() {
@@ -90,6 +92,14 @@ public class frmEjercicio1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/back.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,6 +157,13 @@ public class frmEjercicio1 extends javax.swing.JFrame {
         txtLado1.requestFocus();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        frmOpcionesGuia1 op=new frmOpcionesGuia1();
+        op.setVisible(true);
+        this.setVisible(false);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -187,6 +204,7 @@ public class frmEjercicio1 extends javax.swing.JFrame {
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

@@ -7,6 +7,7 @@ package com.frames.guia1;
 
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
+import javax.swing.JFrame;
 
 /**
  *
@@ -39,6 +40,7 @@ public class frmEjercicio4 extends javax.swing.JFrame {
         txtVolumnCubo = new javax.swing.JTextField();
         txtDiagonal1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,6 +76,14 @@ public class frmEjercicio4 extends javax.swing.JFrame {
 
         jLabel3.setText("Diagonal:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/back.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,6 +121,13 @@ public class frmEjercicio4 extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtDiagonal1KeyTyped
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        frmOpcionesGuia1 op=new frmOpcionesGuia1();
+        op.setVisible(true);
+        this.setVisible(false);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -152,6 +169,7 @@ public class frmEjercicio4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtDiagonal1;
     private javax.swing.JTextField txtVolumnCubo;
     // End of variables declaration//GEN-END:variables

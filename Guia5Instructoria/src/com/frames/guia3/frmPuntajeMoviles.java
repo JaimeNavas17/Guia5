@@ -19,6 +19,7 @@ public class frmPuntajeMoviles extends javax.swing.JFrame {
     DefaultComboBoxModel modelo=new DefaultComboBoxModel();
     public frmPuntajeMoviles() {
         initComponents();
+        setLocationRelativeTo(null);
         llenandoCombobox();
         txtPrincipal.setEnabled(false);
         txtSecundaria.setEnabled(false);

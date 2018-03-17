@@ -7,6 +7,7 @@ package com.frames.guia1;
 
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
+import javax.swing.JFrame;
 
 /**
  *
@@ -50,6 +51,7 @@ public class frmEjercicio3 extends javax.swing.JFrame {
         rbtDiametro = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,6 +135,14 @@ public class frmEjercicio3 extends javax.swing.JFrame {
 
         jLabel7.setText("Ingrese datos:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/back.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -242,6 +252,13 @@ public class frmEjercicio3 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtDiametroKeyTyped
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        frmOpcionesGuia1 op=new frmOpcionesGuia1();
+        op.setVisible(true);
+        this.setVisible(false);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -288,6 +305,7 @@ public class frmEjercicio3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JRadioButton rbtDiametro;
     private javax.swing.JRadioButton rbtRadio;
     private javax.swing.JTextField txtDiametro;

@@ -6,8 +6,10 @@
 package com.frames.guia4;
 
 import com.frames.guia3.*;
+import com.frames.login.frmMenuLogin;
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,6 +22,7 @@ public class frmPuntajeMoviles extends javax.swing.JFrame {
     DefaultComboBoxModel modelo=new DefaultComboBoxModel();
     public frmPuntajeMoviles() {
         initComponents();
+        setLocationRelativeTo(null);
         llenandoCombobox();
         txtPrincipal.setEnabled(false);
         txtSecundaria.setEnabled(false);
@@ -70,6 +73,7 @@ public class frmPuntajeMoviles extends javax.swing.JFrame {
         btnEjecutar = new javax.swing.JButton();
         txtPuntaje = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -226,6 +230,14 @@ public class frmPuntajeMoviles extends javax.swing.JFrame {
 
         jLabel13.setText("Puntaje de Moviles");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/back.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -712,6 +724,13 @@ public class frmPuntajeMoviles extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPuntajeActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        frmMenuLogin menu=new frmMenuLogin();
+        
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -763,6 +782,7 @@ public class frmPuntajeMoviles extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;
     private javax.swing.JTextField txtGarantia;

@@ -5,6 +5,10 @@
  */
 package com.frames.guia1;
 
+import com.frames.login.frmMenuLogin;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
 /**
  *
  * @author enrique
@@ -35,6 +39,7 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
         btn4 = new javax.swing.JButton();
         btn5 = new javax.swing.JButton();
         btn1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(300, 300));
@@ -84,6 +89,14 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
         });
         getContentPane().add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/back.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,9 +126,15 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         frmEjercicio5 ej5=new frmEjercicio5();
-        ej5.show();
-        this.hide();
+        ej5.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btn5ActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        frmMenuLogin menu=new frmMenuLogin();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -158,6 +177,7 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
     private javax.swing.JButton btn3;
     private javax.swing.JButton btn4;
     private javax.swing.JButton btn5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
