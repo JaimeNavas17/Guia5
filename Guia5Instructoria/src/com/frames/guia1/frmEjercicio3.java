@@ -5,6 +5,7 @@
  */
 package com.frames.guia1;
 
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 
 /**
@@ -47,25 +48,33 @@ public class frmEjercicio3 extends javax.swing.JFrame {
         btnLimpiar = new javax.swing.JButton();
         rbtRadio = new javax.swing.JRadioButton();
         rbtDiametro = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Radio:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 20));
+        jLabel1.setText("Resultados:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, -1, 20));
 
         jLabel2.setText("Diametro:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, 20));
 
         jLabel3.setText("Volumen con diametro:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, 20));
 
         jLabel4.setText("Volumen con radio:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, -1, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, -1, 30));
 
         jLabel5.setText("Volumen de Circunferencia");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 20));
-        getContentPane().add(txtDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 140, -1));
+
+        txtDiametro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDiametroKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 140, -1));
 
         txtVolumenDiametro.setEditable(false);
         txtVolumenDiametro.addActionListener(new java.awt.event.ActionListener() {
@@ -73,11 +82,17 @@ public class frmEjercicio3 extends javax.swing.JFrame {
                 txtVolumenDiametroActionPerformed(evt);
             }
         });
-        getContentPane().add(txtVolumenDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 140, -1));
+        getContentPane().add(txtVolumenDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 140, -1));
 
         txtVolumenRadio.setEditable(false);
-        getContentPane().add(txtVolumenRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 140, -1));
-        getContentPane().add(txtRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 140, -1));
+        getContentPane().add(txtVolumenRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 140, -1));
+
+        txtRadio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRadioKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 140, -1));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +100,7 @@ public class frmEjercicio3 extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +108,7 @@ public class frmEjercicio3 extends javax.swing.JFrame {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
 
         btgVolumen.add(rbtRadio);
         rbtRadio.setText("Radio");
@@ -102,7 +117,7 @@ public class frmEjercicio3 extends javax.swing.JFrame {
                 rbtRadioStateChanged(evt);
             }
         });
-        getContentPane().add(rbtRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        getContentPane().add(rbtRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
 
         btgVolumen.add(rbtDiametro);
         rbtDiametro.setText("Diametro");
@@ -111,7 +126,13 @@ public class frmEjercicio3 extends javax.swing.JFrame {
                 rbtDiametroStateChanged(evt);
             }
         });
-        getContentPane().add(rbtDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        getContentPane().add(rbtDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, -1));
+
+        jLabel6.setText("Radio:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, 20));
+
+        jLabel7.setText("Ingrese datos:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,11 +144,13 @@ public class frmEjercicio3 extends javax.swing.JFrame {
     private void rbtRadioStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbtRadioStateChanged
         if (rbtRadio.isSelected()) {
             txtDiametro.setEnabled(false);
+            txtVolumenDiametro.setEnabled(false);
             txtDiametro.setText("");
             txtRadio.requestFocus();
        }
         else{
             txtDiametro.setEnabled(true);
+            txtVolumenDiametro.setEnabled(true);
         }
         
     }//GEN-LAST:event_rbtRadioStateChanged
@@ -135,11 +158,13 @@ public class frmEjercicio3 extends javax.swing.JFrame {
     private void rbtDiametroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbtDiametroStateChanged
         if (rbtDiametro.isSelected()) {
             txtRadio.setEnabled(false);
+            txtVolumenRadio.setEnabled(false);
             txtRadio.setText("");
             txtDiametro.requestFocus();
         }
         else{
             txtRadio.setEnabled(true);
+            txtVolumenRadio.setEnabled(true);
         }
     }//GEN-LAST:event_rbtDiametroStateChanged
 
@@ -172,6 +197,50 @@ public class frmEjercicio3 extends javax.swing.JFrame {
        txtDiametro.setText("");
        txtRadio.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void txtRadioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRadioKeyTyped
+        int c=(int) evt.getKeyChar();
+
+        if ((c >=48 && c<=57)  || (c==46) || (c==8) || (c== (char)KeyEvent.VK_BACK_SPACE) || (c== (char)KeyEvent.VK_ENTER)) {
+            if (c==46) {
+                String cadena=txtRadio.getText();
+                int tamanio=cadena.length();
+                for (int i = 0; i <= tamanio; i++) {
+                    if (cadena.contains(".")) {
+                        evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+                        getToolkit().beep();
+                        evt.consume();
+                    }
+                }
+            }
+        }else{
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtRadioKeyTyped
+
+    private void txtDiametroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiametroKeyTyped
+        int c=(int) evt.getKeyChar();
+
+        if ((c >=48 && c<=57)  || (c==46) || (c==8) || (c== (char)KeyEvent.VK_BACK_SPACE) || (c== (char)KeyEvent.VK_ENTER)) {
+            if (c==46) {
+                String cadena=txtDiametro.getText();
+                int tamanio=cadena.length();
+                for (int i = 0; i <= tamanio; i++) {
+                    if (cadena.contains(".")) {
+                        evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+                        getToolkit().beep();
+                        evt.consume();
+                    }
+                }
+            }
+        }else{
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDiametroKeyTyped
 
     /**
      * @param args the command line arguments
@@ -217,6 +286,8 @@ public class frmEjercicio3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JRadioButton rbtDiametro;
     private javax.swing.JRadioButton rbtRadio;
     private javax.swing.JTextField txtDiametro;

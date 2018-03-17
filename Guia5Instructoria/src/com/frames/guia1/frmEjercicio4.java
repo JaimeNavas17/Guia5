@@ -5,6 +5,7 @@
  */
 package com.frames.guia1;
 
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 
 /**
@@ -46,7 +47,7 @@ public class frmEjercicio4 extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 21, -1, -1));
 
         jLabel2.setText("Volumen cubo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -54,14 +55,25 @@ public class frmEjercicio4 extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
         txtVolumnCubo.setEditable(false);
-        getContentPane().add(txtVolumnCubo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 150, -1));
-        getContentPane().add(txtDiagonal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 150, -1));
+        getContentPane().add(txtVolumnCubo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 150, -1));
+
+        txtDiagonal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDiagonal1ActionPerformed(evt);
+            }
+        });
+        txtDiagonal1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDiagonal1KeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtDiagonal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 150, -1));
 
         jLabel3.setText("Diagonal:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -73,6 +85,32 @@ public class frmEjercicio4 extends javax.swing.JFrame {
         resultado=Math.pow(resultado, 3);
         txtVolumnCubo.setText(formato.format(resultado)+"");
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtDiagonal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiagonal1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDiagonal1ActionPerformed
+
+    private void txtDiagonal1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiagonal1KeyTyped
+        int c=(int) evt.getKeyChar();
+
+        if ((c >=48 && c<=57)  || (c==46) || (c==8) || (c== (char)KeyEvent.VK_BACK_SPACE) || (c== (char)KeyEvent.VK_ENTER)) {
+            if (c==46) {
+                String cadena=txtDiagonal1.getText();
+                int tamanio=cadena.length();
+                for (int i = 0; i <= tamanio; i++) {
+                    if (cadena.contains(".")) {
+                        evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+                        getToolkit().beep();
+                        evt.consume();
+                    }
+                }
+            }
+        }else{
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDiagonal1KeyTyped
 
     /**
      * @param args the command line arguments

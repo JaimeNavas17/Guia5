@@ -5,6 +5,7 @@
  */
 package com.frames.guia1;
 
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 
 /**
@@ -52,7 +53,7 @@ public class frmEjercicio2 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Calcular circunferencia");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
 
         jLabel2.setText("Ingrese radio:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
@@ -67,6 +68,12 @@ public class frmEjercicio2 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtCircunferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 120, -1));
+
+        txtRadio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRadioKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 120, -1));
 
         btnCalcular.setText("Calcular");
@@ -79,6 +86,12 @@ public class frmEjercicio2 extends javax.swing.JFrame {
 
         jLabel4.setText("Ingrese diametro:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        txtDiametro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDiametroKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtDiametro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 120, -1));
 
         jLabel5.setText("Circunferencia con radio:");
@@ -168,22 +181,26 @@ public class frmEjercicio2 extends javax.swing.JFrame {
     private void rdRadioStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rdRadioStateChanged
         if (rdRadio.isSelected()) {
             txtDiametro.setEnabled(false);
+            txtCircunferencia.setEnabled(false);
             txtDiametro.setText("");
             txtRadio.requestFocus();
        }
         else{
             txtDiametro.setEnabled(true);
+            txtCircunferencia.setEnabled(true);
         }
     }//GEN-LAST:event_rdRadioStateChanged
 
     private void rdDiametroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rdDiametroStateChanged
         if (rdDiametro.isSelected()) {
             txtRadio.setEnabled(false);
+            txtCircunferenciaRadio.setEnabled(false);
             txtRadio.setText("");
             txtDiametro.requestFocus();
         }
         else{
             txtRadio.setEnabled(true);
+            txtCircunferenciaRadio.setEnabled(true);
         }
     }//GEN-LAST:event_rdDiametroStateChanged
 
@@ -197,6 +214,50 @@ public class frmEjercicio2 extends javax.swing.JFrame {
     private void txtCircunferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCircunferenciaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCircunferenciaActionPerformed
+
+    private void txtRadioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRadioKeyTyped
+        int c=(int) evt.getKeyChar();
+
+        if ((c >=48 && c<=57)  || (c==46) || (c==8) || (c== (char)KeyEvent.VK_BACK_SPACE) || (c== (char)KeyEvent.VK_ENTER)) {
+            if (c==46) {
+                String cadena=txtRadio.getText();
+                int tamanio=cadena.length();
+                for (int i = 0; i <= tamanio; i++) {
+                    if (cadena.contains(".")) {
+                        evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+                        getToolkit().beep();
+                        evt.consume();
+                    }
+                }
+            }
+        }else{
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtRadioKeyTyped
+
+    private void txtDiametroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiametroKeyTyped
+        int c=(int) evt.getKeyChar();
+
+        if ((c >=48 && c<=57)  || (c==46) || (c==8) || (c== (char)KeyEvent.VK_BACK_SPACE) || (c== (char)KeyEvent.VK_ENTER)) {
+            if (c==46) {
+                String cadena=txtDiametro.getText();
+                int tamanio=cadena.length();
+                for (int i = 0; i <= tamanio; i++) {
+                    if (cadena.contains(".")) {
+                        evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+                        getToolkit().beep();
+                        evt.consume();
+                    }
+                }
+            }
+        }else{
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDiametroKeyTyped
 
     /**
      * @param args the command line arguments

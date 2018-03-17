@@ -5,18 +5,20 @@
  */
 package com.frames.guia1;
 
+import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
+
 /**
  *
  * @author arman
  */
 public class frmEjercicio1 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrameGuia1
-     */
+    DecimalFormat formato=new DecimalFormat("0.00");
     public frmEjercicio1() {
         initComponents();
         this.setLocationRelativeTo(null);
+        txtLado1.requestFocus();
     }
     
     
@@ -38,8 +40,14 @@ public class frmEjercicio1 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtDiagonal = new javax.swing.JTextField();
         txtArea = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formKeyTyped(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Calcular el area y la diagonal");
@@ -47,6 +55,12 @@ public class frmEjercicio1 extends javax.swing.JFrame {
 
         jLabel4.setText("Ingrese lado del cuadrado:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        txtLado1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLado1KeyTyped(evt);
+            }
+        });
         getContentPane().add(txtLado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 170, -1));
 
         btnCalcular.setText("Calcular");
@@ -62,8 +76,20 @@ public class frmEjercicio1 extends javax.swing.JFrame {
 
         jLabel7.setText("Area:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
+
+        txtDiagonal.setEditable(false);
         getContentPane().add(txtDiagonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 100, -1));
+
+        txtArea.setEditable(false);
         getContentPane().add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 100, -1));
+
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -76,7 +102,7 @@ public class frmEjercicio1 extends javax.swing.JFrame {
         
         area=lado*lado;
         
-        txtArea.setText(area+"");
+        txtArea.setText(formato.format(area)+"");
         
         //diagonal
         double diagonal,sResultado;
@@ -84,9 +110,42 @@ public class frmEjercicio1 extends javax.swing.JFrame {
         sResultado=Math.pow(lado, 2)+Math.pow(lado, 2);
         diagonal=Math.sqrt(sResultado);
         
-        txtDiagonal.setText(diagonal+"");
+        txtDiagonal.setText(formato.format(diagonal)+"");
         
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
+        
+    }//GEN-LAST:event_formKeyTyped
+
+    private void txtLado1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLado1KeyTyped
+        int c=(int) evt.getKeyChar();
+
+        if ((c >=48 && c<=57)  || (c==46) || (c==8) || (c== (char)KeyEvent.VK_BACK_SPACE) || (c== (char)KeyEvent.VK_ENTER)) {
+            if (c==46) {
+                String cadena=txtLado1.getText();
+                int tamanio=cadena.length();
+                for (int i = 0; i <= tamanio; i++) {
+                    if (cadena.contains(".")) {
+                        evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+                        getToolkit().beep();
+                        evt.consume();
+                    }
+                }
+            }
+        }else{
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR);
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtLado1KeyTyped
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        txtArea.setText("");
+        txtDiagonal.setText("");
+        txtLado1.setText("");
+        txtLado1.requestFocus();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +185,7 @@ public class frmEjercicio1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;

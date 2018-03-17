@@ -20,6 +20,7 @@ public class frmEjercicio5 extends javax.swing.JFrame {
      */
     public frmEjercicio5() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -94,7 +95,7 @@ public class frmEjercicio5 extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
         jLabel3.setText("Promedio de 10 Datos");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 15, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 20));
 
         jLabel1.setText("Promedio:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, -1, -1));
