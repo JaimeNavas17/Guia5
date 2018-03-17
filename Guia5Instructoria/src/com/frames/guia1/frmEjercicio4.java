@@ -5,17 +5,22 @@
  */
 package com.frames.guia1;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author enrique
  */
 public class frmEjercicio4 extends javax.swing.JFrame {
 
+        DecimalFormat formato=new DecimalFormat("0.00");
     /**
      * Creates new form frmEjercicio4
      */
     public frmEjercicio4() {
         initComponents();
+        setLocationRelativeTo(null);
+        txtDiagonal1.requestFocus();
     }
 
     /**
@@ -27,21 +32,47 @@ public class frmEjercicio4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        txtVolumnCubo = new javax.swing.JTextField();
+        txtDiagonal1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Volumen de cubo");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 21, -1, -1));
+
+        jLabel2.setText("Volumen cubo:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
+
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        txtVolumnCubo.setEditable(false);
+        getContentPane().add(txtVolumnCubo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 150, -1));
+        getContentPane().add(txtDiagonal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 150, -1));
+
+        jLabel3.setText("Diagonal:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        double diagonal=Double.parseDouble(txtDiagonal1.getText());
+        double raiz2=Math.sqrt(2);
+        double resultado=diagonal/raiz2;
+        resultado=Math.pow(resultado, 3);
+        txtVolumnCubo.setText(formato.format(resultado)+"");
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +110,11 @@ public class frmEjercicio4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField txtDiagonal1;
+    private javax.swing.JTextField txtVolumnCubo;
     // End of variables declaration//GEN-END:variables
 }
