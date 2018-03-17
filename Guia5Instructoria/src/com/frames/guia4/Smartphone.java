@@ -99,7 +99,7 @@ public class Smartphone {
         return 0;
     }
     
-    public int getGarantia(int garantia){
+    public int getGarantia(double garantia){
         if (garantia>0 && garantia<=3) {
             return 1;
         }else if (garantia>3 && garantia<6) {
