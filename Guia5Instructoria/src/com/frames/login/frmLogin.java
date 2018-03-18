@@ -38,7 +38,6 @@ public class frmLogin extends javax.swing.JFrame {
         txtLogin = new javax.swing.JTextField();
         btnIngresar = new javax.swing.JButton();
         txtPass = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -52,6 +51,7 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel2.setText("Password:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
         jLabel3.setText("Bienvenido al sistema");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
         getContentPane().add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 130, -1));
@@ -65,13 +65,10 @@ public class frmLogin extends javax.swing.JFrame {
         getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
         getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 130, -1));
 
-        jLabel4.setText("Esperanza Herrera Armando Jose");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, 30));
+        jLabel5.setText("Jaime Alejandro Navas Farfan");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, 30));
 
-        jLabel5.setText("Espadero Miranda Edgardo Ernesto");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, -1, 30));
-
-        jLabel6.setText("Desarolladores:");
+        jLabel6.setText("Desarollador:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, -1, 30));
 
         pack();
@@ -85,7 +82,7 @@ public class frmLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Rellene todos los campos");
             
         }else {
-            if (login.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("123abc")) {
+            if (login.equalsIgnoreCase("Jaime") && pass.equalsIgnoreCase("navas01")) {
               frmMenuLogin menu=new frmMenuLogin();
               
               menu.setVisible(true);
@@ -137,7 +134,6 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField txtLogin;

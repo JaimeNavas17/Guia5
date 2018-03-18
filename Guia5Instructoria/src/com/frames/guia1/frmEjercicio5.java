@@ -96,6 +96,7 @@ public class frmEjercicio5 extends javax.swing.JFrame {
         jLabel2.setText("Ingresar datos:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
         jLabel3.setText("Promedio de 10 Datos");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 20));
 
@@ -105,7 +106,7 @@ public class frmEjercicio5 extends javax.swing.JFrame {
         txtPromedio.setEditable(false);
         getContentPane().add(txtPromedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 100, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/back.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/908-64.png"))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);

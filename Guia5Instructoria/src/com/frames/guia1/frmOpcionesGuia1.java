@@ -43,13 +43,12 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(300, 300));
-        setPreferredSize(new java.awt.Dimension(400, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setText("EJERCICIOS GUIA 1");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, 20));
+        jLabel5.setText("Ejercicios Guia N1");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, 20));
 
-        btn2.setText("Ejercicio 2");
+        btn2.setText("Ejercicio N2");
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn2ActionPerformed(evt);
@@ -57,7 +56,7 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
         });
         getContentPane().add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, -1));
 
-        btn3.setText("Ejercicio 3");
+        btn3.setText("Ejercicio N3");
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3ActionPerformed(evt);
@@ -65,7 +64,7 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
         });
         getContentPane().add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
-        btn4.setText("Ejercicio 4");
+        btn4.setText("Ejercicio N4");
         btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn4ActionPerformed(evt);
@@ -73,7 +72,7 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
         });
         getContentPane().add(btn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, -1));
 
-        btn5.setText("Ejercicio 5");
+        btn5.setText("Ejercicio N5");
         btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn5ActionPerformed(evt);
@@ -81,7 +80,7 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
         });
         getContentPane().add(btn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
 
-        btn1.setText("Ejercicio 1");
+        btn1.setText("Ejercicio N1");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn1ActionPerformed(evt);
@@ -89,13 +88,13 @@ public class frmOpcionesGuia1 extends javax.swing.JFrame {
         });
         getContentPane().add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/back.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/recursos/iconos/908-64.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -70, 290, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

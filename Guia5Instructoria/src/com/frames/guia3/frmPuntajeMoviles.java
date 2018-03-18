@@ -93,6 +93,7 @@ public class frmPuntajeMoviles extends javax.swing.JFrame {
         jLabel7.setText("Camaras:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
         jLabel12.setText("Puntaje de Moviles");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
